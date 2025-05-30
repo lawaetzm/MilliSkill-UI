@@ -441,7 +441,6 @@ const MiliSkill = () => {
 
   const CareerPathView = () => {
     const [selectedPath, setSelectedPath] = useState<string | null>(null);
-    const [hoveredNode, setHoveredNode] = useState<string | null>(null);
     const [showDetailedPath, setShowDetailedPath] = useState<string | null>(null);
 
     // Current recruit status
@@ -770,7 +769,7 @@ const MiliSkill = () => {
               </div>
 
               {/* Career Path Steps */}
-              {careerPaths[showDetailedPath as keyof typeof careerPaths].positions.map((position, index) => {
+              {careerPaths[showDetailedPath as keyof typeof careerPaths].positions.map((position) => {
                 const IconComponent = careerPaths[showDetailedPath as keyof typeof careerPaths].icon;
                 const isCurrentlyAccessible = currentStatus.level >= position.level - 1;
                 const isCompleted = currentStatus.level > position.level;
@@ -940,9 +939,6 @@ const MiliSkill = () => {
   };
 
   const InstructorDashboard = () => {
-    const [sortBy, setSortBy] = useState('progress');
-    const [filterStatus, setFilterStatus] = useState('all');
-    
     // Mock data for instructor dashboard
     const myRecruits = [
       { 
