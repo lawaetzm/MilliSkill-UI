@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Users, Target, Shield, Award, BookOpen, MessageCircle, User, Search, Bell } from 'lucide-react';
 
 interface Module {
